@@ -27,7 +27,7 @@ public class PigGameState extends GameState{
 
 
     public int getCurrentValue() {
-        return currentValue;
+        return currentVal;
     }
 
     public boolean isPlayerId() {
@@ -35,11 +35,11 @@ public class PigGameState extends GameState{
     }
 
     public int getPlayer0Score() {
-        return player0Score;
+        return p0score;
     }
 
     public int getPlayer1Score() {
-        return player1Score;
+        return p1score;
     }
 
     public int getRunningTotal() {
@@ -47,15 +47,15 @@ public class PigGameState extends GameState{
     }
 
     public void setCurrentValue(int currentValue) {
-        this.currentValue = currentValue;
+        this.currentVal = currentValue;
     }
 
     public void setPlayer0Score(int player0Score) {
-        this.player0Score = player0Score;
+        this.p0score = player0Score;
     }
 
     public void setPlayer1Score(int player1Score) {
-        this.player1Score = player1Score;
+        this.p1score = player1Score;
     }
 
     public void setPlayerId(boolean playerId) {
@@ -66,8 +66,8 @@ public class PigGameState extends GameState{
         this.runningTotal = runningTotal;
     }
 
-    @Override
-    public void setGame(Game g) {
-        super.setGame(g);
+    //@Override
+    //public void setGame(Game g) {
+        //super.setGame(g);
     }
 }
