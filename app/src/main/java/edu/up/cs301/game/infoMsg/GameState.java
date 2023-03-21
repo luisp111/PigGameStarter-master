@@ -15,3 +15,4 @@ public abstract class GameState extends GameInfo {
 	private static final long serialVersionUID = -5109179064333136954L;
 
 }
+
