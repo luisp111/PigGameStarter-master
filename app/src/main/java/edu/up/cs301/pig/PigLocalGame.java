@@ -31,8 +31,14 @@ public class PigLocalGame extends LocalGame {
     @Override
     protected boolean canMove(int playerIdx) {
         //TODO  You will implement this method
-        return false;
-    }
+        if(pgs.isPlayerId() == playerIdx) {
+            return true;
+        }
+
+            else {
+            return false;
+        }
+        }
 
     /**
      * This method is called when a new action arrives from a player
@@ -42,6 +48,7 @@ public class PigLocalGame extends LocalGame {
     @Override
     protected boolean makeMove(GameAction action) {
         //TODO  You will implement this method
+
         return false;
     }//makeMove
 
@@ -50,7 +57,7 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected void sendUpdatedStateTo(GamePlayer p) {
-        //TODO  You will implement this method
+
     }//sendUpdatedSate
 
     /**
@@ -63,7 +70,16 @@ public class PigLocalGame extends LocalGame {
     @Override
     protected String checkIfGameOver() {
         //TODO  You will implement this method
-        return null;
+
+            if (pgs.getPlayer0Score() >= 50) {
+                return pgs.isPlayerId()+ " wins with a score of " + pgs.getPlayer0Score() + "!";
+            } else if (pgs.getPlayer1Score()>= 50) {
+                return pgs.isPlayerId() + " wins with a score of " + pgs.getPlayer1Score() + "!";
+            } else {
+                return "The game is not over yet.";
+            }
+        }
+
     }
 
 }// class PigLocalGame
