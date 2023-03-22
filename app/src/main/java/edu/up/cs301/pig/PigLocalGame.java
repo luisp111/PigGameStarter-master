@@ -4,6 +4,7 @@ import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.LocalGame;
 import edu.up.cs301.game.actionMsg.GameAction;
 import edu.up.cs301.game.infoMsg.GameState;
+import edu.up.cs301.game.infoMsg.PigGameState;
 
 import android.util.Log;
 
@@ -16,12 +17,12 @@ import android.util.Log;
  * @version February 2016
  */
 public class PigLocalGame extends LocalGame {
-
+    PigGameState pgs = new PigGameState();
     /**
      * This ctor creates a new game state
      */
-    public PigLocalGame() {
-        //TODO  You will implement this constructor
+    public PigLocalGame(PigGameState initPGS) {
+        pgs = initPGS;
     }
 
     /**
