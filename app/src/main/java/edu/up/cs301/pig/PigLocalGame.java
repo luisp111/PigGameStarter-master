@@ -3,14 +3,10 @@ package edu.up.cs301.pig;
 import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.LocalGame;
 import edu.up.cs301.game.actionMsg.GameAction;
-import edu.up.cs301.game.actionMsg.PigHoldAction;
-import edu.up.cs301.game.actionMsg.PigRollAction;
 import edu.up.cs301.game.infoMsg.GameState;
 import edu.up.cs301.game.infoMsg.PigGameState;
 
 import android.util.Log;
-
-import java.util.Random;
 
 // dummy comment, to see if commit and push work from srvegdahl account
 
@@ -103,7 +99,16 @@ public class PigLocalGame extends LocalGame {
     @Override
     protected String checkIfGameOver() {
         //TODO  You will implement this method
-        return null;
+
+            if (pgs.getPlayer0Score() >= 50) {
+                return pgs.isPlayerId()+ " wins with a score of " + pgs.getPlayer0Score() + "!";
+            } else if (pgs.getPlayer1Score()>= 50) {
+                return pgs.isPlayerId() + " wins with a score of " + pgs.getPlayer1Score() + "!";
+            } else {
+                return "The game is not over yet.";
+            }
+        }
+
     }
 
 }// class PigLocalGame
