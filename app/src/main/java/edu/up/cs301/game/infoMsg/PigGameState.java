@@ -1,14 +1,14 @@
 package edu.up.cs301.game.infoMsg;
 
 public class PigGameState extends GameState{
-    boolean playerId;
+    int playerId;
     int p0score;
     int p1score;
     int runningTotal;
     int currentVal;
 
     public PigGameState(){
-        playerId = true;
+        playerId = 0;
         p0score = 0;
         p1score = 0;
         runningTotal = 0;
@@ -30,7 +30,7 @@ public class PigGameState extends GameState{
         return currentVal;
     }
 
-    public boolean isPlayerId() {
+    public int isPlayerId() {
         return playerId;
     }
 
@@ -58,7 +58,7 @@ public class PigGameState extends GameState{
         this.p1score = player1Score;
     }
 
-    public void setPlayerId(boolean playerId) {
+    public void setPlayerId(int playerId) {
         this.playerId = playerId;
     }
 
