@@ -4,6 +4,7 @@ import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.LocalGame;
 import edu.up.cs301.game.actionMsg.GameAction;
 import edu.up.cs301.game.actionMsg.PigHoldAction;
+
 import edu.up.cs301.game.actionMsg.PigRollAction;
 import edu.up.cs301.game.infoMsg.GameState;
 import edu.up.cs301.game.infoMsg.PigGameState;
@@ -21,12 +22,12 @@ import java.util.Random;
  * @version February 2016
  */
 public class PigLocalGame extends LocalGame {
-    PigGameState pgs = new PigGameState();
+    PigGameState pgs;
     /**
      * This ctor creates a new game state
      */
-    public PigLocalGame(PigGameState initPGS) {
-        pgs = initPGS;
+    public PigLocalGame() {
+        pgs = new PigGameState();
     }
 
     /**
@@ -102,14 +103,14 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected String checkIfGameOver() {
-        //TODO  You will implement this method
+
 
             if (pgs.getPlayer0Score() >= 50) {
                 return pgs.isPlayerId()+ " wins with a score of " + pgs.getPlayer0Score() + "!";
             } else if (pgs.getPlayer1Score()>= 50) {
                 return pgs.isPlayerId() + " wins with a score of " + pgs.getPlayer1Score() + "!";
             } else {
-                return "The game is not over yet.";
+                return null;
             }
         }
 
