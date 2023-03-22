@@ -67,7 +67,8 @@ public class PigLocalGame extends LocalGame {
             return true;
 
         } else if (action instanceof PigRollAction) {
-            int random = 1 + Random.nextInt(5);
+            Random rand = new Random();
+            int random = 1 + rand.nextInt(5);
             if (random != 1) {
                 pgs.setRunningTotal(pgs.getRunningTotal() + random);
             }
@@ -88,7 +89,8 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected void sendUpdatedStateTo(GamePlayer p) {
-
+        PigGameState gs = new PigGameState(pgs);
+        p.sendInfo(gs);
     }//sendUpdatedSate
 
     /**
