@@ -3,6 +3,8 @@ package edu.up.cs301.pig;
 import edu.up.cs301.game.GameHumanPlayer;
 import edu.up.cs301.game.GameMainActivity;
 import edu.up.cs301.game.R;
+import edu.up.cs301.game.actionMsg.PigHoldAction;
+import edu.up.cs301.game.actionMsg.PigRollAction;
 import edu.up.cs301.game.infoMsg.GameInfo;
 import edu.up.cs301.game.infoMsg.PigGameState;
 
@@ -119,7 +121,15 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
      * 		the button that was clicked
      */
     public void onClick(View button) {
-        //TODO  You will implement this method to send appropriate action objects to the game
+        if(button.equals(dieImageButton)){
+            PigRollAction pra = new PigRollAction(this);
+            game.sendAction(pra);
+        }
+        if(button.equals(holdButton)){
+            PigHoldAction pha = new PigHoldAction(this);
+            game.sendAction(pha);
+        }
+
     }// onClick
 
     /**
