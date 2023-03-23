@@ -34,6 +34,11 @@ public class PigComputerPlayer extends GameComputerPlayer {
      */
     @Override
     protected void receiveInfo(GameInfo info) {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         PigGameState pigs = (PigGameState) info;
         PigHoldAction pha = new PigHoldAction(this);
         PigRollAction pra = new PigRollAction(this);
